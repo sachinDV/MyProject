@@ -1,0 +1,72 @@
+<!doctype html>
+<html ng-app="MyModule">
+    <head>
+        <script src="./angular.js"></script>
+        <script src="./controller.js"></script>
+        <meta charset="UTF-8">  
+        <title>PC Applications</title>
+        <link rel="stylesheet" 
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+            integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+    </head>
+    <body ng-controller="pcApps">
+            
+            <div class = "well well-sm">
+                <div class="row">
+                    <div class="col-md-8">
+                        <button class="btn btn-info btn-lg" ng-click="activatateSelection()">Selection</button>
+                        <button class="btn btn-info btn-lg" ng-click="activatateExecution()">Execution</button>
+                        <button class="btn btn-info btn-lg" ng-click="activateReport()">Report</button>
+                    </div>
+                </div>
+            </div>
+            <div ng-hide = "homeView">
+                <div class="page-header" >
+                    <h1>
+                        <strong>{{name}}</strong>
+                    </h1>
+                </div>
+                <div>
+                
+                    <strong>Application Description</strong>
+                    <p1>
+                        This application provides to run pc application especially network related application.In the selection page you can select the application,in the execution page you can execute the selected application and report of the run will be created at the report page
+                    </p1>
+                </div>
+            </div>
+        
+            <div ng-hide = "selectionView">
+                <h1>Selection Page</h1>
+                <div class = "well well-sm">
+                    <div class="row">
+                        <div class="col-md-8">
+                            Select an App
+                            <select ng-model="networkappSelected" ng-options="cmd for cmd in commands">
+                            </select>
+                        </div>
+                        <button class="pull-right btn btn-primary" style="margin-bottom:2px" ng-click="save();">Save</button>
+
+                    </div>
+                </div>
+        </div>
+            
+            <div ng-hide = "executionView">
+                
+                <h1>Execution Page</h1>
+            </div>
+            
+            <div ng-hide = "reportView">
+                
+                <h1>Report Page</h1>
+            </div>
+            
+            
+        
+        
+    </body>
+</html>
